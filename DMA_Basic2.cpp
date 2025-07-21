@@ -13,12 +13,12 @@ class integerDMA
         /**
          * description Pointer to dynamically allocated integer.
          */
-        int *p = NULL;
+
 
         /**
          * description Stores the integer value entered by the user.
          */
-        int a = 0;
+      
     public :
         /**
          * description Allocates memory for an integer and assigns user input to it.
@@ -29,7 +29,18 @@ class integerDMA
          * Note* This implementation does not properly use dynamic memory allocation,
          * as 'p' is assigned the address of a local variable instead of the allocated memory.
          */
-        void vAllocatedDMA();
+        void vAllocatedDMA()
+        {
+            int a = 0;
+            int *p = NULL;
+            p = new int;
+
+            cout<<"enter a value"<<endl;
+            cin>>a;
+            p = &a;
+            cout<<"a and p value "<<a<<" "<<*p<<endl; 
+            delete (p);
+        }
 };
 /**
  * description Main function to demonstrate integerDMA usage.
